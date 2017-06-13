@@ -57,7 +57,7 @@ class EventDispatcherTest extends UnitTestCase {
    */
   public function testEventIsDispatchedWithCorrectName() {
     $event = new DeathStarWasDestroyed();
-    $this->setExpectedEvent('test_event_occurred', $event);
+    $this->setExpectedEvent('death_star_was_destroyed', $event);
 
     $dispatcher = new EventDispatcher($this->systemDispatcher, $this->logger);
     $dispatcher->dispatch($event);
