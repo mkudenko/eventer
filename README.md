@@ -45,6 +45,7 @@ class UserHasRegistered extends Event {
 namespace Drupal\my_module\EventSubscriber;
 
 use Drupal\eventor\EventListener;
+use Drupal\my_module\Events\UserHasRegistered;
 
 /**
  * Class AdminNotifier.
@@ -66,7 +67,7 @@ class AdminNotifier extends EventListener {
 }
 ```
 
-3. Register your event listener as a service.
+3. Register your event listener as a service in `my_module.services.yml`.
 ```yaml
 services:
   my_module.admin_notifier:
