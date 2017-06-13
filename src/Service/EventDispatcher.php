@@ -1,9 +1,9 @@
 <?php
 
-namespace Drupal\eventer\Service;
+namespace Drupal\eventor\Service;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\eventer\Contracts\DispatcherInterface as DispatcherInterface;
+use Drupal\eventor\Contracts\DispatcherInterface as DispatcherInterface;
 use Stringy\Stringy as S;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -37,7 +37,7 @@ class EventDispatcher implements DispatcherInterface {
    */
   public function __construct(EventDispatcherInterface $dispatcher, LoggerChannelFactoryInterface $loggerFactory) {
     $this->dispatcher = $dispatcher;
-    $this->log = $loggerFactory->get('eventer');
+    $this->log = $loggerFactory->get('eventor');
   }
 
   /**

@@ -1,24 +1,24 @@
 <?php
 
-namespace Drupal\Tests\eventer\Kernel;
+namespace Drupal\Tests\eventor\Kernel;
 
-use Drupal\eventer_test\Events\DeathStarWasDestroyed;
+use Drupal\eventor_test\Events\DeathStarWasDestroyed;
 use Drupal\KernelTests\KernelTestBase;
 
 /**
- * Class EventerTest.
+ * Class EventorTest.
  *
- * @package Drupal\Tests\eventer\Kernel
+ * @package Drupal\Tests\eventor\Kernel
  */
-class EventerTest extends KernelTestBase {
+class EventorTest extends KernelTestBase {
 
   /**
    * {@inheritdoc}
    */
   public static $modules = [
     'system',
-    'eventer',
-    'eventer_test',
+    'eventor',
+    'eventor_test',
   ];
 
   /**
@@ -27,8 +27,8 @@ class EventerTest extends KernelTestBase {
   public function testEventListenerReactsToEvent() {
     $event = new DeathStarWasDestroyed();
 
-    /** @var \Drupal\eventer\Service\EventDispatcher $dispatcher */
-    $dispatcher = \Drupal::service('eventer.event_dispatcher');
+    /** @var \Drupal\eventor\Service\EventDispatcher $dispatcher */
+    $dispatcher = \Drupal::service('eventor.event_dispatcher');
     $dispatcher->dispatch($event);
 
     $this->assertSame(FALSE, $event->darthVaderIsHappy);

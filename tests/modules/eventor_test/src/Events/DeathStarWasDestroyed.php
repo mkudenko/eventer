@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\eventer_test\Events;
+namespace Drupal\eventor_test\Events;
 
 use Symfony\Component\EventDispatcher\Event;
 

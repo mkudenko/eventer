@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\eventer;
+namespace Drupal\eventor;
 
 use Stringy\Stringy as S;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

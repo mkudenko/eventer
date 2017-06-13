@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\eventer\Contracts;
+namespace Drupal\eventor\Contracts;
 
 use Symfony\Component\EventDispatcher\Event;
 

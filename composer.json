@@ -1,5 +1,5 @@
 {
-    "name": "drupal/eventer",
+    "name": "drupal/eventor",
     "type": "drupal-module",
     "description": "Wrapper for Drupal events dispatcher and subscribers.",
     "keywords": ["Drupal", "Events"],

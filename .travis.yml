@@ -11,7 +11,7 @@ php:
 
 env:
   global:
-    - MODULE_NAME='eventer'
+    - MODULE_NAME='eventor'
     - PHPCS_VERSION='2.7.*'
     - CODER_VERSION='8.2.9'
 

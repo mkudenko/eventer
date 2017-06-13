@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\Tests\eventer\Unit;
+namespace Drupal\Tests\eventor\Unit;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelInterface;
-use Drupal\eventer\Service\EventDispatcher;
-use Drupal\eventer_test\Events\DeathStarWasDestroyed;
+use Drupal\eventor\Service\EventDispatcher;
+use Drupal\eventor_test\Events\DeathStarWasDestroyed;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Class EventDispatcherTest.
  *
- * @package Drupal\Tests\eventer\Unit
+ * @package Drupal\Tests\eventor\Unit
  */
 class EventDispatcherTest extends UnitTestCase {
 
