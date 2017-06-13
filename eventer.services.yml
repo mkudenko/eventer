@@ -1,0 +1,4 @@
+services:
+  eventer.event_dispatcher:
+    class: Drupal\eventer\Service\EventDispatcher
+    arguments: ['@event_dispatcher', '@logger.factory']
