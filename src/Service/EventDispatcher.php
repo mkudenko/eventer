@@ -4,7 +4,7 @@ namespace Drupal\eventor\Service;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\eventor\Contracts\DispatcherInterface as DispatcherInterface;
-use Stringy\Stringy as S;
+use Stringy\Stringy;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -66,7 +66,7 @@ class EventDispatcher implements DispatcherInterface {
   protected function getEventName(Event $event) {
     $oClass = new \ReflectionClass($event);
 
-    return S::create($oClass->getShortName())
+    return Stringy::create($oClass->getShortName())
       ->underscored()
       ->__toString();
   }
