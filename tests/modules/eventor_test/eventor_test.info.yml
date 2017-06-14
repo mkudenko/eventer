@@ -2,4 +2,4 @@ name: Eventor Test
 type: module
 description: Provides test classes for Eventor module tests.
 core: 8.x
-package: Cool stuff
+package: Testing
