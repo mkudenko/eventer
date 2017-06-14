@@ -24,9 +24,6 @@ namespace Drupal\my_module\Events;
 
 use Symfony\Component\EventDispatcher\Event;
 
-/**
- * Class UserHasRegistered.
- */
 class UserHasRegistered extends Event {
 
   public $user;
@@ -52,12 +49,6 @@ use Drupal\my_module\Events\UserHasRegistered;
  */
 class AdminNotifier extends EventListener {
 
-  /**
-   * Event handler.
-   *
-   * @param \Drupal\my_module\Events\UserHasRegistered $event
-   *   Event.
-   */
   public function whenUserHasRegistered(UserHasRegistered $event) {
     $registeredUser = $event->user; 
     
@@ -82,7 +73,7 @@ services:
 <?php
 
 $event = new UserHasRegistered($user);
-$dispatcher = \Drupal::service('eventor.event_dispatcher')->dispatch($event);
+\Drupal::service('eventor.event_dispatcher')->dispatch($event);
 ```
 
 ## Development on GitHub
