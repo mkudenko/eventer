@@ -14,6 +14,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * Class EventDispatcherTest.
  *
  * @package Drupal\Tests\eventor\Unit
+ *
+ * @group eventor
  */
 class EventDispatcherTest extends UnitTestCase {
 

@@ -9,6 +9,8 @@ use Drupal\KernelTests\KernelTestBase;
  * Class EventorTest.
  *
  * @package Drupal\Tests\eventor\Kernel
+ *
+ * @group eventor
  */
 class EventorTest extends KernelTestBase {
 
