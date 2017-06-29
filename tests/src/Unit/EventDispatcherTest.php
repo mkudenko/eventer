@@ -2,8 +2,6 @@
 
 namespace Drupal\Tests\eventor\Unit;
 
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\eventor\Service\EventDispatcher;
 use Drupal\eventor_test\Events\DeathStarWasDestroyed;
 use Drupal\Tests\UnitTestCase;
@@ -29,29 +27,12 @@ class EventDispatcherTest extends UnitTestCase {
   protected $systemDispatcher;
 
   /**
-   * Mock for LoggerChannelFactoryInterface.
-   *
-   * @var \PHPUnit_Framework_MockObject_MockObject
-   *
-   * @see \Drupal\Core\Logger\LoggerChannelFactoryInterface
-   */
-  protected $logger;
-
-  /**
    * {@inheritdoc}
    */
   public function setUp() {
     parent::setUp();
 
     $this->systemDispatcher = $this->getMock(EventDispatcherInterface::class);
-
-    $logChannel = $this->getMock(LoggerChannelInterface::class);
-    $logChannel->expects($this->once())->method('notice');
-
-    $logger = $this->getMock(LoggerChannelFactoryInterface::class);
-    $logger->expects($this->once())->method('get')->willReturn($logChannel);
-
-    $this->logger = $logger;
   }
 
   /**
@@ -61,7 +42,7 @@ class EventDispatcherTest extends UnitTestCase {
     $event = new DeathStarWasDestroyed();
     $this->setExpectedEvent('death_star_was_destroyed', $event);
 
-    $dispatcher = new EventDispatcher($this->systemDispatcher, $this->logger);
+    $dispatcher = new EventDispatcher($this->systemDispatcher);
     $dispatcher->dispatch($event);
 
     $this->verifyMockObjects();
