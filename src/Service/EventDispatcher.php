@@ -2,8 +2,7 @@
 
 namespace Drupal\eventor\Service;
 
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\eventor\Contracts\DispatcherInterface as DispatcherInterface;
+use Drupal\eventor\Contracts\DispatcherInterface;
 use Stringy\Stringy;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -21,23 +20,13 @@ class EventDispatcher implements DispatcherInterface {
   protected $dispatcher;
 
   /**
-   * The logger instance.
-   *
-   * @var \Drupal\Core\Logger\LoggerChannelInterface
-   */
-  protected $log;
-
-  /**
    * Create a new EventDispatcher instance.
    *
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
    *   Event dispatcher.
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
-   *   Logger factory.
    */
-  public function __construct(EventDispatcherInterface $dispatcher, LoggerChannelFactoryInterface $loggerFactory) {
+  public function __construct(EventDispatcherInterface $dispatcher) {
     $this->dispatcher = $dispatcher;
-    $this->log = $loggerFactory->get('eventor');
   }
 
   /**
@@ -50,8 +39,6 @@ class EventDispatcher implements DispatcherInterface {
     $eventName = $this->getEventName($event);
 
     $this->dispatcher->dispatch($eventName, $event);
-
-    $this->log->notice("{$eventName} was fired.");
   }
 
   /**
